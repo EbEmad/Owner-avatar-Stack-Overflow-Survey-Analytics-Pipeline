@@ -1,0 +1,5 @@
+.ipynb_checkpoints
+__pycache__
+Data/external/
+Data/raw/2023/
+Data/raw/2024/

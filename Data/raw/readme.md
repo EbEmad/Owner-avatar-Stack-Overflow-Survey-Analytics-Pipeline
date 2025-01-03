@@ -1,0 +1,1 @@
+2024 and 2023 results were used during this project, you can find this data here:https://survey.stackoverflow.co/
