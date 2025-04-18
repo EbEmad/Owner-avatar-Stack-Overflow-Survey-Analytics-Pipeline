@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: dockerfile
+    container_name: my_app
+    command: ["bash", "-c", "while true; do sleep 30; done;"]
+    
+  mysql:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: test_db
+      MYSQL_USER: user
+      MYSQL_PASSWORD: root
+    ports:
+      - "3306:3306"
+    volumes:
+      - ${PWD}/Data-Model/Tables_Creation.sql:/docker-entrypoint-initdb.d/Tables_Creation.sql
+    
