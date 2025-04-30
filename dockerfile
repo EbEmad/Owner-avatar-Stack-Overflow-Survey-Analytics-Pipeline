@@ -10,6 +10,11 @@ COPY reqirements.txt .
 RUN pip install --no-cache-dir -r reqirements.txt
 
 # Copy the rest of the application code into the container
-COPY ./Scripts .
+COPY ./Scripts /app/Scripts
+COPY ./test.py /app/test.py
+# Expose the port Jupyter runs on
+EXPOSE 8888
 
-CMD ["bash"]
+CMD ["python", "test.py"]
+
+
